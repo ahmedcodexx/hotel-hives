@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  &,
+  &.light-mode {
+    --color-text:  #000; 
+    --color-primary:  #fff; 
+    --color-secondary: #f3f4f6;
+  }
+  
+  &.dark-mode {
+    --color-text:  #fffe; 
+    --color-primary: #1f2937;
+    --color-secondary: #111827;
+  }
+}
+
+@theme {
+    --color-main: #432dd7;
+}
+
+@layer components {
+  .link {
+    @apply cursor-pointer px-5 py-4 transition-all duration-200 text-[var(--color-text)] hover:bg-[var(--color-secondary)];
+  }
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+  .flex-start {
+    @apply flex items-center justify-start;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-end {
+    @apply flex items-center justify-end;
+  }
+  .flex-around {
+    @apply flex items-center justify-around;
+  }
+  .dev-input {
+    @apply m-auto flex w-2/3 items-center justify-between gap-5;
+  }
+  .input {
+    @apply w-[300px] rounded-sm border-1 text-[var(--color-text)] border-[var(--color-secondary)] p-2;
+  }
+  .li-filter {
+    @apply cursor-pointer rounded-xl px-3 py-2 text-sm hover:bg-indigo-700 hover:text-white;
+  }
+  .pagination-btn {
+    @apply flex cursor-pointer items-center justify-center rounded-md bg-indigo-600 px-3 py-2 text-[var(--color-text)] hover:bg-indigo-700;
+  }
+  .file-input {
+    &::file-selector-button {
+      @apply mr-3 cursor-pointer rounded-sm bg-indigo-600 px-3 py-2 text-white;
+    }
+    &::file-selector-button:hover {
+      @apply bg-indigo-700;
+    }
+  }
+}
+
+.active {
+  background: var(--color-secondary);
+  font-weight: bold;
+}
+.active-filter {
+  background: #432dd7 ;
+  color: #fff;
+}
